@@ -2,6 +2,7 @@ Hi, I'm Jimmy and these are some of my eye candy adventures made with Go.
 
 ![image](/assets/images/reflectionWorld.jpeg)
 ![image](/assets/images/reflectionWorld.jpg)
+![image](/assets/images/csg.jpeg)
 ![image](/assets/images/cow.png)
 ![image](/assets/images/uvMap.png)
 
