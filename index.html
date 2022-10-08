@@ -5,10 +5,10 @@
   <body>
 Hi, I'm Jimmy and these are some of my eye candy adventures made with Go and Rust.
     <canvas id="canvas" width="640" height="480"></canvas>
-    <script src="/assets/flappy_dragon.js"></script>
+    <script src="./assets/flappy_dragon.js"></script>
     <script>
       window.addEventListener("load", async () => {
-        await wasm_bindgen("/assets/flappy_dragon.wasm");
+        await wasm_bindgen("./assets/flappy_dragon_bg.wasm");
       });
     </script>
 
