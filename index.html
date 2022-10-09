@@ -1,32 +1,97 @@
 <html>
 <head>
-  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+          crossorigin="anonymous">
+
 </head>
 <body>
-Hi, I'm Jimmy and these are some of my eye candy adventures made with Go and Rust!
-<canvas id="canvas" width="640" height="480"></canvas>
-<script src="./asciirunner.js"></script>
-<script>
-  window.addEventListener("load", async () => {
-    await wasm_bindgen("./asciirunner_bg.wasm");
-  });
-</script>
+<div class="container">
 
-<img src="/assets/images/reflectionWorld.jpeg">
-<img src="/assets/images/reflectionWorld2.jpeg">
-<img src="/assets/images/csg.jpeg">
-<img src="/assets/images/cow.jpeg">
-<img src="/assets/images/uvMap.jpeg">
+    <h2 class="fw-light text-center text-lg-start mt-4 mb-0">Hi, I'm Jimmy and these are some of my eye candy adventures
+        made with Go and Rust!</h2>
 
-Simulations with SPH (Smoothed Particle Hydrodynamics).
-<a href="https://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics">https://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics</a>
-<img src="/assets/images/sph3D.png">
-<img src="/assets/images/liquidPhysics.gif">
+    <hr class="mt-2 mb-5">
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#indicator" data-bs-slide-to="0" class="active" aria-current="true"
+                    aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#indicator" data-bs-slide-to="1" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#indicator" data-bs-slide-to="2" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#indicator" data-bs-slide-to="3" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#indicator" data-bs-slide-to="4" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#indicator" data-bs-slide-to="5" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#indicator" data-bs-slide-to="6" aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#indicator" data-bs-slide-to="7" aria-label="Slide 7"></button>
+
+        </div>
+
+        <div class="carousel-inner" object-fit=cover>
+            <div class="carousel-item active" data-bs-interval="99999999999" keyboard="false">
+                <!--        <img src="/assets/images/reflectionWorld.jpeg" class="d-block w-100" alt="...">-->
+                <canvas id="canvas" width="640" height="480" class="d-block w-100"></canvas>
+                <script src="./asciirunner.js"></script>
+                <script>
+                    window.addEventListener("load", async () => {
+                        await wasm_bindgen("./asciirunner_bg.wasm");
+                    });
+                </script>
+            </div>
+            <div class="carousel-item" keyboard="false" object-fit=cover>
+                <img height=810px src="/assets/images/reflectionWorld2.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" keyboard="false">
+                <img height=810px src="/assets/images/reflectionWorld.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" keyboard="false">
+                <img height=810px src="/assets/images/csg.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" keyboard="false">
+                <img height=810px src="/assets/images/cow.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" keyboard="false">
+                <img height=810px src="/assets/images/uvMap.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" keyboard="false">
+                <img height=810px src="/assets/images/sph3D.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" keyboard="false">
+                <img height=810px src="/assets/images/liquidPhysics.gif" class="d-block w-100" alt="...">
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
 
 
-📫 you can reach me at: <a href="mailto:castlevanity@gmail.com">castlevanity@gmail.com</a>
 
-<a href="https://github.com/jimmykiang">GitHub</a>
+    </div>
+    <div>
+        <h3 class="fw-light text-center text-lg-start mt-4 mb-0">
+            📫 you can reach me at: <a href="mailto:castlevanity@gmail.com">castlevanity@gmail.com</a>
 
+        </h3>
+
+        <h3 class="fw-light text-center text-lg-start mt-4 mb-0">
+
+            <a href="https://github.com/jimmykiang">GitHub</a>
+        </h3>
+
+    </div>
+</div>
 </body>
 </html>
