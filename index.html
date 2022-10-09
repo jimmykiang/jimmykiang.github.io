@@ -1,34 +1,32 @@
 <html>
-  <head>
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
-  </head>
-  <body>
-Hi, I'm Jimmy and these are some of my eye candy adventures made with Go and Rust.
-    <canvas id="canvas" width="640" height="480"></canvas>
-    <script src="./flappy_dragon.js"></script>
-    <script>
-      window.addEventListener("load", async () => {
-        await wasm_bindgen("./flappy_dragon_bg.wasm");
-      });
-    </script>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+</head>
+<body>
+Hi, I'm Jimmy and these are some of my eye candy adventures made with Go and Rust!
+<canvas id="canvas" width="640" height="480"></canvas>
+<script src="./asciirunner.js"></script>
+<script>
+  window.addEventListener("load", async () => {
+    await wasm_bindgen("./asciirunner_bg.wasm");
+  });
+</script>
 
-![image](/assets/images/reflectionWorld.jpeg)
-![image](/assets/images/reflectionWorld.jpg)
-![image](/assets/images/csg.jpeg)
-![image](/assets/images/cow.png)
-![image](/assets/images/uvMap.png)
+<img src="/assets/images/reflectionWorld.jpeg">
+<img src="/assets/images/reflectionWorld2.jpeg">
+<img src="/assets/images/csg.jpeg">
+<img src="/assets/images/cow.jpeg">
+<img src="/assets/images/uvMap.jpeg">
 
 Simulations with SPH (Smoothed Particle Hydrodynamics).
 <a href="https://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics">https://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics</a>
-![image](/assets/images/sph3D.png)
-![image](/assets/images/liquidPhysics.gif)
-
+<img src="/assets/images/sph3D.png">
+<img src="/assets/images/liquidPhysics.gif">
 
 
 📫 you can reach me at: <a href="mailto:castlevanity@gmail.com">castlevanity@gmail.com</a>
 
 <a href="https://github.com/jimmykiang">GitHub</a>
 
-  </body>
+</body>
 </html>
-
