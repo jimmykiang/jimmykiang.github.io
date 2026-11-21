@@ -13,6 +13,7 @@
           crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/showcase.css">
     <script src="./assets/js/flock-background.js" defer></script>
+    <script src="./assets/js/carousel-preview.js" defer></script>
 </head>
 <body>
 <canvas id="heading-flock" aria-hidden="true"></canvas>
@@ -22,71 +23,75 @@
             <h2 class="h4 fw-light mb-0">Hi, I'm Jimmy and these are some of my eye candy adventures
                 made with Go and Rust!</h2>
             <hr class="mt-2 mb-5">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-flock-obstacle>
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#indicator" data-bs-slide-to="0" class="active" aria-current="true"
-                            aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#indicator" data-bs-slide-to="1" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#indicator" data-bs-slide-to="2" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#indicator" data-bs-slide-to="3" aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#indicator" data-bs-slide-to="4" aria-label="Slide 4"></button>
-                    <button type="button" data-bs-target="#indicator" data-bs-slide-to="5" aria-label="Slide 5"></button>
-                    <button type="button" data-bs-target="#indicator" data-bs-slide-to="6" aria-label="Slide 6"></button>
-                    <button type="button" data-bs-target="#indicator" data-bs-slide-to="7" aria-label="Slide 7"></button>
-                    <button type="button" data-bs-target="#indicator" data-bs-slide-to="8" aria-label="Slide 8"></button>
+            <div class="showcase-carousel-slot" data-flock-obstacle>
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#indicator" data-bs-slide-to="0" class="active" aria-current="true"
+                                aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#indicator" data-bs-slide-to="1" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#indicator" data-bs-slide-to="2" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#indicator" data-bs-slide-to="3" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#indicator" data-bs-slide-to="4" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#indicator" data-bs-slide-to="5" aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#indicator" data-bs-slide-to="6" aria-label="Slide 6"></button>
+                        <button type="button" data-bs-target="#indicator" data-bs-slide-to="7" aria-label="Slide 7"></button>
+                        <button type="button" data-bs-target="#indicator" data-bs-slide-to="8" aria-label="Slide 8"></button>
+                    </div>
 
+                    <div class="carousel-inner">
+                        <div class="carousel-item active bg-white" data-bs-interval="15000" keyboard="false">
+                            <canvas id="glcanvas" width="640" height="380" class="d-block w-100"></canvas>
+                            <script src="./gl.js"></script>
+                            <script>load("wphysics.wasm");</script>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="99999999999" keyboard="false">
+                            <canvas id="canvas" width="640" height="480" class="d-block w-100"></canvas>
+                            <script src="./asciirunner.js"></script>
+                            <script>
+                                window.addEventListener("load", async () => {
+                                    await wasm_bindgen("./asciirunner_bg.wasm");
+                                });
+                            </script>
+                        </div>
+                        <div class="carousel-item" keyboard="false">
+                            <img src="/assets/images/reflectionWorld2.jpeg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" keyboard="false">
+                            <img src="/assets/images/reflectionWorld.jpeg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" keyboard="false">
+                            <img src="/assets/images/csg.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" keyboard="false">
+                            <img src="/assets/images/cow.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" keyboard="false">
+                            <img src="/assets/images/uvMap.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" keyboard="false">
+                            <img src="/assets/images/sph3D.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" keyboard="false">
+                            <img src="/assets/images/liquidPhysics.gif" class="d-block w-100" alt="...">
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="next" color="red">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
-
-                <div class="carousel-inner">
-                    <div class="carousel-item active bg-white" data-bs-interval="15000" keyboard="false">
-                        <canvas id="glcanvas" width="640" height="380" class="d-block w-100"></canvas>
-                        <script src="./gl.js"></script>
-                        <script>load("wphysics.wasm");</script>
-                    </div>
-                    <div class="carousel-item" data-bs-interval="99999999999" keyboard="false">
-                        <canvas id="canvas" width="640" height="480" class="d-block w-100"></canvas>
-                        <script src="./asciirunner.js"></script>
-                        <script>
-                            window.addEventListener("load", async () => {
-                                await wasm_bindgen("./asciirunner_bg.wasm");
-                            });
-                        </script>
-                    </div>
-                    <div class="carousel-item" keyboard="false">
-                        <img src="/assets/images/reflectionWorld2.jpeg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item" keyboard="false">
-                        <img src="/assets/images/reflectionWorld.jpeg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item" keyboard="false">
-                        <img src="/assets/images/csg.png" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item" keyboard="false">
-                        <img src="/assets/images/cow.png" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item" keyboard="false">
-                        <img src="/assets/images/uvMap.png" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item" keyboard="false">
-                        <img src="/assets/images/sph3D.png" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item" keyboard="false">
-                        <img src="/assets/images/liquidPhysics.gif" class="d-block w-100" alt="...">
-                    </div>
-
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide="next" color="red">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-
-
+                <button type="button" class="carousel-expand carousel-preview-arrow btn btn-dark" aria-haspopup="dialog"
+                        aria-controls="carousel-preview" aria-expanded="false" aria-label="Expand carousel"
+                        title="Expand carousel" hidden>
+                    <span class="carousel-preview-arrow-icon" aria-hidden="true">&uarr;</span>
+                </button>
             </div>
         </div>
         <section class="showcase-panel text-center text-lg-start" aria-labelledby="vision-gallery-title"
@@ -134,6 +139,21 @@
             <a href="https://github.com/jimmykiang">GitHub</a>
         </h5>
 
+    </div>
+</div>
+
+<div class="modal fade" id="carousel-preview" tabindex="-1" aria-labelledby="carousel-preview-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title fs-5" id="carousel-preview-title">Carousel Preview</h2>
+                <button type="button" class="carousel-preview-arrow btn btn-outline-secondary" data-bs-dismiss="modal"
+                        aria-label="Return to page" title="Return to page">
+                    <span class="carousel-preview-arrow-icon" aria-hidden="true">&uarr;</span>
+                </button>
+            </div>
+            <div class="modal-body p-0"></div>
+        </div>
     </div>
 </div>
 

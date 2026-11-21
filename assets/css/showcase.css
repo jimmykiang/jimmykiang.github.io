@@ -38,8 +38,49 @@ body {
     background-size: 50% 50%;
 }
 
+.showcase-carousel-slot,
 #carouselExampleIndicators {
     aspect-ratio: 16 / 9;
+}
+
+.showcase-carousel-slot {
+    position: relative;
+}
+
+.carousel-preview-arrow {
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.carousel-preview-arrow-icon {
+    display: inline-block;
+    transition: transform 220ms ease-out;
+}
+
+.carousel-expand[aria-expanded="true"] .carousel-preview-arrow-icon,
+#carousel-preview.show .carousel-preview-arrow-icon {
+    transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel-preview-arrow-icon {
+        transition: none;
+    }
+}
+
+.carousel-expand {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 3;
+}
+
+#carousel-preview .modal-dialog {
+    --bs-modal-width: min(1140px, calc(100% - 2rem));
 }
 
 #carouselExampleIndicators .carousel-inner {
@@ -58,6 +99,14 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+#carouselExampleIndicators.carousel-preview-enabled .carousel-item > img {
+    cursor: zoom-in;
+}
+
+#carousel-preview #carouselExampleIndicators.carousel-preview-enabled .carousel-item > img {
+    cursor: zoom-out;
 }
 
 .showcase-layout {
@@ -161,7 +210,8 @@ body {
     outline-offset: -3px;
 }
 
-html.vision-preview-open {
+html.vision-preview-open,
+html.carousel-preview-open {
     /* Prevent Bootstrap's temporary scrollbar changes from moving the gallery. */
     overflow-anchor: none;
 }
