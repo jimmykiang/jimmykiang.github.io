@@ -12,15 +12,17 @@
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
           crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/showcase.css">
+    <script src="./assets/js/flock-background.js" defer></script>
 </head>
 <body>
-<div class="container">
+<canvas id="heading-flock" aria-hidden="true"></canvas>
+<div class="container showcase-content">
     <div class="showcase-layout mt-4">
         <div class="showcase-panel text-center text-lg-start">
             <h2 class="h4 fw-light mb-0">Hi, I'm Jimmy and these are some of my eye candy adventures
                 made with Go and Rust!</h2>
             <hr class="mt-2 mb-5">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-flock-obstacle>
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#indicator" data-bs-slide-to="0" class="active" aria-current="true"
                             aria-label="Slide 1"></button>
@@ -36,7 +38,7 @@
                 </div>
 
                 <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="15000" keyboard="false">
+                    <div class="carousel-item active bg-white" data-bs-interval="15000" keyboard="false">
                         <canvas id="glcanvas" width="640" height="380" class="d-block w-100"></canvas>
                         <script src="./gl.js"></script>
                         <script>load("wphysics.wasm");</script>
@@ -87,8 +89,9 @@
 
             </div>
         </div>
-        <section class="showcase-panel text-center text-lg-start" aria-labelledby="vision-gallery-title">
-            <h2 class="h4 fw-light mb-0" id="vision-gallery-title">...and applied AI (Computer Vision)</h2>
+        <section class="showcase-panel text-center text-lg-start" aria-labelledby="vision-gallery-title"
+                 data-flock-obstacle>
+            <h2 class="h4 fw-light mb-0" id="vision-gallery-title">...and some fun with applied AI and Computer Vision!</h2>
             <hr class="mt-2 mb-5">
             <div>
                 <div class="row row-cols-1 row-cols-lg-3 g-4">
